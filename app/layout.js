@@ -1,17 +1,17 @@
-'use client';
-
-import { SessionProvider } from "next-auth/react";
-
 export const metadata = {
   title: 'Inv.bot',
   description: 'Dashboard de trading automático en criptomonedas',
 };
 
+import SessionWrapper from './SessionWrapper';
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body>
-        <SessionProvider>{children}</SessionProvider>
+        <SessionWrapper>
+          {children}
+        </SessionWrapper>
       </body>
     </html>
   );
