@@ -5,8 +5,7 @@ import React, { useState } from 'react';
 const brokers = [
   { value: '', label: 'Select a broker' },
   { value: 'alpaca', label: 'Alpaca' },
-  // { value: 'binance', label: 'Binance (próximamente)' },
-  // Agrega más brokers cuando quieras ampliar
+  // { value: 'binance', label: 'Binance (próximamente)' }
 ];
 
 export const BrokerConnector = ({ selectedBroker, onBrokerChange }) => {
@@ -48,3 +47,17 @@ export const BrokerConnector = ({ selectedBroker, onBrokerChange }) => {
           <input
             type="password"
             placeholder="API Secret"
+            value={apiSecret}
+            onChange={e => setApiSecret(e.target.value)}
+            style={{
+              width: '100%',
+              padding: 8,
+              borderRadius: 4,
+              border: '1px solid #ccc'
+            }}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
