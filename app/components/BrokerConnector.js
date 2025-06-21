@@ -13,7 +13,19 @@ export const BrokerConnector = ({ selectedBroker, onBrokerChange }) => {
   };
 
   return (
-    <div style={{ marginBottom: 24 }}>
+    <div
+      style={{
+        maxWidth: 420,           // El ancho máximo del cuadro
+        width: "100%",
+        margin: "0 auto",
+        background: "#fff",
+        borderRadius: 10,
+        boxShadow: "0 1px 6px #0001",
+        padding: 18,
+        boxSizing: "border-box",
+        marginBottom: 24,
+      }}
+    >
       {/* Título */}
       <div style={{ display: 'flex', alignItems: 'center', fontWeight: 700, fontSize: 28, marginBottom: 12 }}>
         <span style={{ marginRight: 10 }}>🗂️</span>
@@ -63,7 +75,7 @@ export const BrokerConnector = ({ selectedBroker, onBrokerChange }) => {
         </div>
       }
 
-      {/* API Key */}
+      {/* API Key y API Secret */}
       {selectedBroker === "alpaca" && (
         <>
           <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 2 }}>API Key</div>
@@ -83,7 +95,6 @@ export const BrokerConnector = ({ selectedBroker, onBrokerChange }) => {
             }}
           />
 
-          {/* API Secret */}
           <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 2 }}>API Secret</div>
           <input
             type="password"
